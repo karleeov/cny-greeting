@@ -1,0 +1,13 @@
+# Chinese New Year CLI
+# This function prints a random Chinese New Year greeting when a new terminal session is started
+function cny_greeting() {
+  # Define an array of greetings
+  local greetings=("新年快乐 (Xīnnián Kuàilè) - Happy New Year!" "恭喜发财 (gōngxǐfācái) - May you have a prosperous year!" "兔年大吉 (tùnián dàjí) - Happy Year of the Rabbit (2023)" "岁岁平安 (suìsuì píng'ān) - May you have peace year after year" "万事如意 (wànshìrúyì) - May all your hopes be fulfilled")
+  # Get a random index from 0 to 4
+  local index=$((RANDOM % 5))
+  # Print the greeting in red color
+  echo -e "\033[0;31m${greetings[$index]}\033[0m"
+}
+
+# Call the function at the end of the file
+cny_greeting
